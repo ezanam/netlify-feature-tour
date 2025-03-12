@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Betanya Ethiopian Restaurant - Authentic Ethiopian Cuisine</title>
+    <style>
+        :root {
+            --primary: #8B4513;
+            --secondary: #FFA500;
+            --light: #FFF8DC;
+            --dark: #4A2511;
+            --white: #FFFFFF;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 1rem 0;
+            text-align: center;
+        }
+        
+        nav {
+            background-color: var(--dark);
+            padding: 1rem 0;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 1rem;
+        }
+        
+        nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        .hero {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://upload.wikimedia.org/wikipedia/commons/7/75/Ethiopian_food.jpg');
+            height: 60vh;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--dark);
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+        
+        section {
+            padding: 3rem 1rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--primary);
+        }
+        
+        .about {
+            background-color: var(--white);
+        }
+        
+        .menu {
+            background-color: var(--light);
+        }
+        
+        .food-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .food-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .food-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .food-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .food-caption {
+            padding: 1rem;
+            background-color: var(--white);
+        }
+        
+        .location {
+            background-color: var(--white);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .map {
+            flex: 1;
+            min-width: 300px;
+            height: 400px;
+            background-color: #e5e5e5;
+        }
+        
+        .map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+            padding: 2rem;
+        }
+        
+        .reviews {
+            background-color: var(--light);
+        }
+        
+        .review-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .review-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .reviewer {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .reviewer img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 1rem;
+            object-fit: cover;
+        }
+        
+        .stars {
+            color: gold;
+            margin-bottom: 0.5rem;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .social-links {
+            margin: 1rem 0;
+        }
+        
+        .social-links a {
+            color: var(--white);
+            margin: 0 0.5rem;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+            
+            .location {
+                flex-direction: column;
+            }
+            
+            .contact-info {
+                order: -1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Betanya Ethiopian Restaurant</h1>
+            <p>Authentic Ethiopian Cuisine in Woodbridge, VA</p>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#location">Location</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Experience Authentic Ethiopian Flavors</h1>
+            <p>Traditional cuisine served with warm hospitality in the heart of Woodbridge</p>
+            <a href="#contact" class="btn">Make a Reservation</a>
+        </div>
+    </section>
+    
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Betanya</h2>
+            <p>Welcome to Betanya Ethiopian Restaurant, where we bring the rich flavors and traditions of Ethiopia to Woodbridge, Virginia. Our restaurant is dedicated to providing an authentic dining experience through carefully prepared dishes made with traditional spices and cooking methods.</p>
+            <p>At Betanya, we believe in the Ethiopian tradition of sharing food as a way to build community. Our injera bread serves as both your utensil and plate, allowing you to truly connect with your food and dining companions.</p>
+            <p>Whether you're new to Ethiopian cuisine or a longtime fan, our friendly staff will guide you through our menu and ensure you have a memorable dining experience.</p>
+        </div>
+    </section>
+    
+    <section id="menu" class="menu">
+        <div class="container">
+            <h2 class="section-title">Our Signature Dishes</h2>
+            <div class="food-gallery">
+                <div class="food-item">
+                    <img src="https://th.bing.com/th/id/OIP.cdweXO41wx1AInXE9P0ssAHaEK?rs=1&pid=ImgDetMain" alt="Doro Wat">
+                    <div class="food-caption">
+                        <h3>Doro Wat</h3>
+                        <p>Spicy chicken stew with berbere spice, served with injera bread</p>
+                    </div>
+                </div>
+                <div class="food-item">
+                    <img src="https://images.squarespace-cdn.com/content/v1/51c325ece4b01f1752ee3259/1592488907301-HYXR2WFC7BXFJHXMOL8U/DSC00054.jpg" alt="Tibs">
+                    <div class="food-caption">
+                        <h3>Tibs</h3>
+                        <p>Sautéed beef or lamb with vegetables and aromatic spices</p>
+                    </div>
+                </div>
+                <div class="food-item">
+                    <img src="https://thumbs.dreamstime.com/z/ethiopian-food-vegetarian-combination-platter-view-ethiopian-vegetarian-combination-platter-280272368.jpg?w=992" alt="Vegetarian Combo">
+                    <div class="food-caption">
+                        <h3>Vegetarian Combo</h3>
+                        <p>A selection of flavorful vegetable and lentil dishes</p>
+                    </div>
+                </div>
+                <div class="food-item">
+                    <img src="https://th.bing.com/th/id/R.5f655968d3d8648ba69ec4c57dbac15c?rik=UGhUS55SQHjZKw&riu=http%3a%2f%2fmigrationology.smugmug.com%2fBlog-Posts%2fi-JQvRdFc%2f0%2fX2%2fethiopian-kitfo-X2.jpg&ehk=46Gzeh375XZvzTkoHh7L%2frHGsKrKLIhDhvhv58wQiq0%3d&risl=&pid=ImgRaw&r=0" alt="Kitfo">
+                    <div class="food-caption">
+                        <h3>Kitfo</h3>
+                        <p>Minced raw beef seasoned with mitmita spice and niter kibbeh</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="location" class="location">
+        <div class="map">
+            <iframe src="https://www.bing.com/maps/embed?h=400&w=600&cp=38.63076~-77.273424&lvl=19.82&typ=d&sty=r&src=SHELL&FORM=MBEDV8" title="Betanya Ethiopian Restaurant Location"></iframe>
+        </div>
+        <div id="contact" class="contact-info">
+            <h2 class="section-title">Visit Us</h2>
+            <p><strong>Address:</strong></p>
+            <p>14827 Buildamerica Drive<br>Woodbridge, VA 22191</p>
+            <p><strong>Phone:</strong></p>
+            <p>(703) 491-1465</p>
+            <p><strong>Hours:</strong></p>
+            <p>Monday - Sunday: 9:00 AM - 9:00 PM</p>
+            <a href="tel:7034911465" class="btn">Call Now</a>
+        </div>
+    </section>
+    
+    <section id="reviews" class="reviews">
+        <div class="container">
+            <h2 class="section-title">Customer Reviews</h2>
+            <div class="review-container">
+                <div class="review-card">
+                    <div class="reviewer">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Default_profile_picture_%28female%29_on_Facebook.jpg" alt="Reviewer">
+                        <div>
+                            <h3>Maria T.</h3>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <p>"This place is amazing! The injera bread is made fresh daily and the doro wat is the best I've ever had. Great atmosphere and welcoming staff. I highly recommend the vegetarian combo for those trying Ethiopian food for the first time."</p>
+                </div>
+                <div class="review-card">
+                    <div class="reviewer">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/Facebook_no_profile_pic_icon.jpg" alt="Reviewer">
+                        <div>
+                            <h3>James K.</h3>
+                            <div class="stars">★★★★☆</div>
+                        </div>
+                    </div>
+                    <p>"Authentic Ethiopian cuisine in Woodbridge! The tibs were perfectly seasoned and the coffee ceremony was a wonderful experience. Portions are generous, and the staff is very helpful in explaining the menu for newcomers."</p>
+                </div>
+                <div class="review-card">
+                    <div class="reviewer">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Default_profile_picture_%28female%29_on_Facebook.jpg" alt="Reviewer">
+                        <div>
+                            <h3>Sophia L.</h3>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <p>"Hidden gem in Woodbridge! I've been to Ethiopia and Betanya captures the flavors perfectly. The kitfo is exceptional, and they will adjust the spice level to your preference. Great value for the quality and quantity of food you receive."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <h2>Betanya Ethiopian Restaurant</h2>
+            <p>14827 Buildamerica Drive, Woodbridge, VA 22191</p>
+            <p>(703) 491-1465</p>
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">Yelp</a>
+            </div>
+            <p>&copy; 2025 Betanya Ethiopian Restaurant. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
